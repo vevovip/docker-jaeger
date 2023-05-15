@@ -1,6 +1,7 @@
 version: '3.7'
 services:
   jaeger:
+    container_name: ${SERVICE_PREFIX}-jaeger
     image: jaegertracing/all-in-one:latest
     ports:
       - "16686:16686"
@@ -11,6 +12,7 @@ services:
     networks:
       - dev-back
   hotrod:
+    container_name: ${SERVICE_PREFIX}-hotrod
     image: jaegertracing/example-hotrod:latest
     # To run the latest trunk build, find the tag at Docker Hub and use the line below
     # https://hub.docker.com/r/jaegertracing/example-hotrod-snapshot/tags
